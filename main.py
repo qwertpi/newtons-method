@@ -1,4 +1,5 @@
 import re 
+from time import sleep
 
 class function():
     def __init__(self, a, power, b, c):
@@ -13,8 +14,8 @@ class function():
 
 raw_function = input("Enter the function rearranged so it equals 0    ")
 
-#pull out every thing before the power symbol
-a = raw_function.split("^")[0]
+#pull out every thing before the power symbol and before the x
+a = raw_function.split("^")[0].split("x")[0]
 #pull out everythhing after the power symbol and before the next +/-
 power = re.split(r"(\+|-)",raw_function.split("^")[1])[0]
 #pull out the the first +/- and everything after the first +/- but before the next x
@@ -33,3 +34,4 @@ while True:
     else:
         x -= adjustment
         print(x)
+    sleep(0.1)
