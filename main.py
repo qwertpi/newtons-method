@@ -3,7 +3,7 @@ from time import sleep
 
 class function():
     '''
-    An object that has methods to input x values into the function and caluclate the derivate at x values
+    An object that has methods to input x values into the function and calculate the derivate at x values
     '''
     def __init__(self, a, power, b, c):
         self.a = int(a)
@@ -17,7 +17,7 @@ class function():
         return self.a*x**self.power + self.b*x + self.c
     def derivative(self, x):
         '''
-        Caluclates the derivative for the passed value of x
+        Calculates the derivative for the passed value of x
         Uses the fact that the deriative of ax^z+bx+c is azx^(z-1)+b
         '''
         return self.power*self.a*x**(self.power-1) + self.b
